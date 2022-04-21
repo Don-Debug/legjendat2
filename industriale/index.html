@@ -9,8 +9,9 @@
 
     <!-- all links   -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
 
     <!-- title -->
@@ -59,7 +60,40 @@
             </section>
         </section>
     </section>
-
+    <!-- Jumpscare -->
+    <div id="videoContainer" style="position:absolute;background-color:black;">
+        <video hidden="hidden" id="myvideo">
+            <source src="./videos/sna.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const video = document.getElementById('myvideo');
+            video.removeAttribute("hidden")
+            video.play();
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+        });
+        document.addEventListener("click", event => {
+            console.log('BIG BALLS')
+            const video = document.getElementById('myvideo');
+            video.removeAttribute("hidden")
+            video.play();
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+        });
+    </script>
     <script src="index.js"></script>
 </body>
 

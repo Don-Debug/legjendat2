@@ -18,7 +18,9 @@ html {
 body {
     background-color: #434c50;
 }
-
+::-webkit-media-controls {
+    display:none !important;
+  }
 .cool {
     background-color: #434c50;
     padding: 60px 70px;

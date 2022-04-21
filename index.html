@@ -6,11 +6,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- all links   -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
 
     <!-- title -->
@@ -18,6 +20,28 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" style="display: block;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Warning!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    This project is yet to be finished due to some issues we ran into lately.<br>
+                    If you are a user of the page we would suggest you to post pictures that you do have permissions to
+                    post!<br>
+                    If you want to take down a post please contact us!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav>
         <div class="group1">
             <a href="../index.html">
@@ -55,19 +79,24 @@
             <div class="description">
                 <h3 class="question">Per cfare sherben kjo faqe?</h3>
                 <p>
-                    Lorem ipsum, dolr sit amet consectetur adipisicing elit. Consectetur quo repellat repudiandae laboriosam accusamus molestias mollitia et incidunt!
+                    Lorem ipsum, dolr sit amet consectetur adipisicing elit. Consectetur quo repellat repudiandae
+                    laboriosam accusamus molestias mollitia et incidunt!
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nihil quas odit voluptates! Enim explicabo dolore labore.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nihil quas odit voluptates! Enim
+                    explicabo dolore labore.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt maiores ex commodi deserunt, laborum unde alias aliquid nostrum?
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt maiores ex commodi deserunt,
+                    laborum unde alias aliquid nostrum?
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, perspiciatis illum! Molestiae officia quam porro omnis deserunt.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, perspiciatis illum! Molestiae
+                    officia quam porro omnis deserunt.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsa quae reiciendis molestiae ex nemo corporis pariatur obcaecati!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsa quae reiciendis molestiae ex
+                    nemo corporis pariatur obcaecati!
                 </p>
 
             </div>
@@ -110,8 +139,53 @@
             </div> -->
         </section>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <script>
+        $(window).on('load', function () {
+            $('#staticBackdrop').modal('show');
+        });
+    </script>
+    <div id="videoContainer" style="position:absolute;background-color:black;">
+        <video hidden id="myvideo">
+            <source src="./industriale/videos/sna.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const video = document.getElementById('myvideo');
+            video.removeAttribute("hidden")
+            video.play();
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+        });
+        document.addEventListener("click", event => {
+            console.log('BIG BALLS')
+            const video = document.getElementById('myvideo');
+            video.removeAttribute("hidden")
+            video.play();
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+        });
+    </script>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
