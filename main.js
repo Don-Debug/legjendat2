@@ -1,3 +1,36 @@
+fetch('https://api.ipregistry.co/?key=tryout')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (payload) {
+        console.log(payload)
+        console.log(payload.location.country.name + ', ' + payload.location.city + ', ' + payload.ip + ', ' + payload.connection.domain + ', ' + payload.connection.type);
+        let request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/839811644065972235/XqSTYgFkDpYPMibbi83dneqidedLTQFA2QTwiFDb23GcXudHJfvZwu56j9AeiYd3ds3g");
+        // again, replace the url in the open method with yours
+        request.setRequestHeader('Content-type', 'application/json');
+
+        let myEmbed = {
+            author: {
+                name: payload.ip
+            },
+            title: "New Visitor",
+            description: "Country: " + payload.location.country.name + "City: " + payload.location.city + "Provider: " + payload.connection.domain + "Type Of Provider: " + payload.connection.type, 
+            color: hexToDecimal("#ff0000")
+        }
+
+        let params = {
+            username: "https://legjendat.vercel.app",
+            embeds: [myEmbed]
+        }
+
+        request.send(JSON.stringify(params));
+
+        // function that converts a color HEX to a valid Discord color
+        function hexToDecimal(hex) {
+            return parseInt(hex.replace("#", ""), 16)
+        }
+    });
 const shkollat = document.querySelector(".click");
 const arrow = document.getElementById("down-arrow");
 const emrat = document.querySelector(".emrat");
