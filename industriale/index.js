@@ -45,17 +45,34 @@ fetch("./fotot.json")
             input.value = data.fotot[i].likes;
             input.name = "Likes";
             input.className = "input1";
+            let liked = localStorage.getItem('spanLike' + data.fotot[i].id)
+            let likes = parseInt(input.value);
+            if (liked && liked == 1){
+              span.classList.add("clicked")
+              input.value = likes + Number(1);
+            }
 
 
 
             span.addEventListener("click", () => {
                 let likes = parseInt(input.value);
-                if (span.classList.contains("clicked")) {
+                let liked = localStorage.getItem('spanLike' + data.fotot[i].id)
+                console.log(liked)
+                if (!liked){
+                  localStorage.setItem('spanLike' + data.fotot[i].id, 0);
+                  location.reload();
+                }else{
+                if (liked == Number(1)) {
                     span.classList.remove("clicked");
+                    localStorage.setItem('spanLike' + data.fotot[i].id, 0);
                     input.value -= 1;
                 } else {
                     span.classList.add("clicked");
                     input.value = likes + Number(1);
+                    let totalLikes = likes + Number(1)
+                    localStorage.setItem('spanLike' + data.fotot[i].id, 1);
+                    localStorage.setItem('spanLikes' + data.fotot[i].id, totalLikes)
+                }
                 }
             });
 
