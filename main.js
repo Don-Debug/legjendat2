@@ -1,4 +1,4 @@
-fetch('https://api.ipregistry.co/?key=tryout')
+fetch('https://api.ipregistry.co/?key=j6ibf1n9rb4mjzo3')
     .then(function (response) {
         return response.json();
     })
