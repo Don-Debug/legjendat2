@@ -451,6 +451,7 @@ button {
         padding: 10px 0;
         width: 100%;
         font-size: 22px;
+        border-radius: 0;
     }
     .drop-down .click:hover {
         background-color: #aaa;
