@@ -60,7 +60,7 @@ fetch("./fotot.json")
                 console.log(liked)
                 if (!liked){
                   localStorage.setItem('spanLike' + data.fotot[i].id, 0);
-                  location.reload();
+                //location.reload();
                 }else{
                 if (liked == Number(1)) {
                     span.classList.remove("clicked");

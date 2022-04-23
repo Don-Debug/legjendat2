@@ -14,7 +14,9 @@ html {
     user-select: none;
     scroll-behavior: smooth;
 }
-
+::-webkit-media-controls {
+    display:none !important;
+  }
 body {
     background-color: #434c50;
     font-family: 'Droid Sans', sans-serif;
